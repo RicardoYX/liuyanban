@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ES6</title>
+    <meta charset="utf-8" />
+    <script>
+    window.onload = function(){
+        //同一个作用域内不能重复定义同一个名称
+        let a=10;let a=20;
+        //有着严格的作用域，变量隶属当前作用域
+        function test() {
+            if(true){
+                var str='123';
+            };
+            console.log(str);
+        };
+        test();
+        //不存在变量提升 var命令会发生’变量提升‘（可以在声明前使用，值为undefined)
+        console.log(a);
+        var a='a';
+
+
+        //箭头函数 简化了函数定义
+        var f = function(v){
+            return v;
+        };
+        f(2);
+        var f = v =>v;
+       // 变量名 = 参数 = 函数体
+       //不传参数
+       var a =()=>'abc';
+       a();
+      // var a = function() {return 'abc'};
+      //传多个参数
+      var sum = (n1,n2) => n1+n2;
+      sum(2,4);
+        //   var sum = function(n1,n2){
+        //       return n1+n2;
+        //   };
+
+        //map 数据结构对象  是键值对的集合 它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。
+        const　m = new Map();
+        m.set('name','lili');
+        m.get('name');
+        m.size;  //长度
+
+        //for...of 循环 
+        var m2 = new Map();
+        m2.set('name','123');
+        for(let [key,value] of m2) {
+             console.log(key+'+'+value); 
+        }
+    }
+    
+    </script>
+</head>
+<body>
+</body>
+</html>
